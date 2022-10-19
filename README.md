@@ -31,7 +31,7 @@ Alternatively, all results can be acquired under `/outputs/`
 
 ## User guide <a name="userguide"></a>
 
-To apply the methodology for custom data or perform predictions, see the [transcript_transformer package](www.github.com/jdcla/transcript_transformer).
+To apply the methodology for custom data or perform predictions, see the [transcript transformer](https://github.com/jdcla/transcript_transformer) package.
 
 
 ## Citation <a name="citation"></a>
