@@ -1,4 +1,4 @@
-# TIS transformer [![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](http://jdcla.ugent.be)
+#🧬 TIS transformer [![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](http://jdcla.ugent.be)
 Supporting repository to equally named study
 ## About <a name="about"></a>
 The TIS transformer is created to annotate translation initiation sites on transcripts based on their nucleotide sequences. The repository holds the scripts, data, models and model outputs used to perform the benchmarks and remap the human proteom as discussed in [this paper](https://www.biorxiv.org/content/10.1101/2021.11.18.468957v1).
