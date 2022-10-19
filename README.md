@@ -7,13 +7,13 @@ To apply the models on custom data or train new models following our approach, w
 
 Data files to large to host on GitHub, specifically those in the `data/`, `models/`, and `outputs/` folders, can be downloaded from [here](http://biobix.be/tis_transformer).
 ## 🔗 Methodology <a name="methodology"></a>
-Annotations are performed by a machine learning model following a methodology similar to those defined for natural language modelling tasks. Ensemble annotations have been used to obtain transcripts and TIS annotations. The model processes the full transcript sequence to impute the presence of TIS at each position on the transcript. 
+Annotations are performed by a machine learning model following a methodology similar to those defined for natural language modelling tasks. Ensemble annotations have been used to obtain transcripts and TIS annotations. The model processes the full transcript sequence to predict the presence of TIS at each position on the transcript. 
 
 The model architecture is based on that of the [Performer](https://arxiv.org/abs/2009.14794), which allows the use of longer input sequences due to the memory efficiency of the attention-based calculations.
 
 ## 📏 Benchmark <a name="benchmark"></a>
 
-The tool has been compared to similar approaches applying TIS imputation based on the transcript nucleotide sequence. More details about the benchmarking approach are listed in the [article](https://www.biorxiv.org/content/10.1101/2021.11.18.468957v1). The scripts to obtain the scores for TISRover, TITER, and DeepGSR are deposited in `scripts/benchmarks`. The models are found under `models/benchmarks`
+The tool has been compared to similar approaches applying TIS prediction based on the transcript nucleotide sequence. More details about the benchmarking approach are listed in the [article](https://www.biorxiv.org/content/10.1101/2021.11.18.468957v1). The scripts to obtain the scores for TISRover, TITER, and DeepGSR are deposited in `scripts/benchmarks`. The models are found under `models/benchmarks`
 
 ## 📊 Remapping of the human proteome <a name="human"></a>
 
