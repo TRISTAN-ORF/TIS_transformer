@@ -1,11 +1,11 @@
 # 🧬 TIS transformer [![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](http://jdcla.ugent.be)
 Supporting repository to equally named study
 ## 📋 About <a name="about"></a>
-The TIS transformer is created to annotate translation initiation sites on transcripts based on their nucleotide sequences. The repository holds the scripts, data, models and model outputs used to perform the benchmarks and remap the human proteom as discussed in [this paper](https://www.biorxiv.org/content/10.1101/2021.11.18.468957v1).
+The TIS transformer is created to annotate translation initiation sites on transcripts based on their nucleotide sequences. The repository holds the scripts, data, models and model outputs used to perform the benchmarks and remap the human proteome as discussed in [this paper](https://www.biorxiv.org/content/10.1101/2021.11.18.468957v1).
 
 To apply the models on custom data or train new models following our approach, we refer to the documentation provided alongside the [transcript transformer](https://github.com/jdcla/transcript_transformer) python package, written as part of this research.
 
-Data files to large to host on GitHub, specifically those in the `data/`, `models/`, and `outputs/` folders, can be downloaded from [here](http://biobix.be/tis_transformer).
+Data files too large to host on GitHub, specifically those in the `data/`, `models/`, and `outputs/` folders, can be downloaded from [the BioBix servers](http://biobix.be/tis_transformer).
 ## 🔗 Methodology <a name="methodology"></a>
 Annotations are performed by a machine learning model following a methodology similar to those defined for natural language modelling tasks. Ensemble annotations have been used to obtain transcripts and TIS annotations. The model processes the full transcript sequence to predict the presence of TIS at each position on the transcript. 
 
