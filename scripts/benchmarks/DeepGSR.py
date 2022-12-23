@@ -75,6 +75,13 @@ class DeepGSR(pl.LightningModule):
         self.log('test_prauc', self.test_prauc, on_step=False, on_epoch=True)
         self.log('test_rocauc', self.test_rocauc, on_step=False, on_epoch=True)
         
+    def predict_step(self, batch, index, dataloader_idx=0):
+        x, y_true = batch
+        y_hat = self(x)
+        y_hat = F.softmax(y_hat, dim=1)[:,1]
+        
+        return y_hat.cpu().numpy(), y_true.cpu().numpy()
+        
     def configure_optimizers(self):
         optimizer = torch.optim.Adadelta(self.parameters(), lr=self.hparams.lr)
 
@@ -95,15 +102,23 @@ class h5pyDataset(torch.utils.data.Dataset):
         
         return [x, y]
     
-fh = h5py.File('../../data/benchmark_samples.hdf5', 'r')
+fh = h5py.File('../../data/DeepGSR_samples.h5', 'r')
 dataset = h5pyDataset(fh)
+
+main_atg_idxs = np.array(fh['atg_idx'])
+alt_atg_idxs = np.array(h5py.File('../../data/TISRover_TITER_samples.h5', 'r')['atg_idx'])
+atg_idx_mask = np.isin(main_atg_idxs, alt_atg_idxs)
 
 val_contigs = [b'2', b'14']
 test_contigs = [b'1', b'7', b'13', b'19']
 
-tr_mask = ~np.isin(fh['contig'], val_contigs + test_contigs)
-val_mask = np.isin(fh['contig'], val_contigs)
-te_mask = np.isin(fh['contig'], test_contigs)
+tr_contig_mask = ~np.isin(fh['contig'], val_contigs + test_contigs)
+val_contig_mask = np.isin(fh['contig'], val_contigs)
+te_contig_mask = np.isin(fh['contig'], test_contigs)
+
+tr_mask = np.logical_and(tr_contig_mask, atg_idx_mask)
+val_mask = np.logical_and(val_contig_mask, atg_idx_mask)
+te_mask = np.logical_and(te_contig_mask, atg_idx_mask)
 
 print(f"Training set samples: {tr_mask.sum()}")
 print(f"validation set samples: {val_mask.sum()}")
