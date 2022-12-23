@@ -6,4 +6,4 @@ Model performances where evaluated when applying only strict local attention. Fo
 |----------------------------|------------------------|--------------------|--------------|-------------|
 |     203 window size        |   8/8 heads per layer  |   ~20h             |   0.999      |   0.781     |
 |     600 window size        |   8/8 heads per layer  |   ~44h             |   0.999      |   0.809     |
-|     Transformer L (paper)  |   5/8 heads per layer  |   ~6h              |   0.999      |   0.829     |
+|     Transformer L (paper)  |   5/8 heads per layer  |   ~19h              |   0.999      |   0.829     |
