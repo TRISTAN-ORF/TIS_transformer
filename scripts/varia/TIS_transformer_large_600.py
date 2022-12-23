@@ -1,21 +1,12 @@
-# check embedding type
+import os
 
 import torch
-import pytorch_lightning as pl
-
 import torch.nn.functional as F
 import torchmetrics as tm
 
-from models import Performer
+from custom_scripts import Performer
 from performer_pytorch.performer_pytorch import FixedPositionalEmbedding
-
-import os
-from pdb import set_trace
-
 from transcript_transformer.transcript_loader import h5pyDataModule, collate_fn
-
-import torch
-import torch.nn.functional as F
 
 import pytorch_lightning as pl
 from pytorch_lightning.callbacks import ModelCheckpoint

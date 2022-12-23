@@ -50,7 +50,6 @@ class WindowAttention(nn.Module):
         self.mask_k_left = torch.clone(self.mask)
         self.mask_k_left[:,:self.w] = True
         self.rel_pos = SinusoidalEmbeddings(dim)
-        #self.rot_emb = RotaryEmbedding(dim = dim)
         
     
     def forward(self, q, k, v, input_mask):
@@ -102,28 +101,6 @@ class WindowAttention(nn.Module):
             z = z.view(b, nh, -1, h)[:,:,:s]
         
         return z
-
-class NaiveSlidingAttention(nn.Module):
-    def __init__(self, window):
-        super().__init__()
-        assert window % 2 == 1, 'Window size should be an odd integer.'
-        self.softmax = nn.Softmax(dim = -1)
-        self.w = int((window-1)/2)
-        
-    def forward(self, q, k, v):
-        assert k.shape[1] == q.shape[1], 'q and k should have same input length.'
-        b, s, nh, h = k.shape
-        
-        q = q * (h ** -.5)
-        
-        A = torch.einsum('b q n h, b k n h -> b n q k', q, k)
-        u = torch.triu(torch.full(A.shape[2:], True), -self.w).to(A.device)
-        mask = torch.logical_and(u, torch.flip(u,[0,1]))
-        A[:,:].masked_fill_(~mask, -torch.finfo(A.dtype).max)
-        As = self.softmax(A)
-
-        z = torch.einsum('b n q k, b k n h -> b n q h', As, v)
-        return A, As, z
     
 # Code adapted from https://github.com/lucidrains/performer-pytorch
 class Performer(nn.Module):
