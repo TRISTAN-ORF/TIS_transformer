@@ -50,7 +50,7 @@ pip install transcript-transformer
 
 ### Predict
 
-A single RNA sequence as input or a path to a `.fa` file can be used. The predict function returns probabilities for all nucleotide positions on the transcript and is stored as a numpy vector format (`.npy`).
+A single RNA sequence as input or a path to a `.fa` file can be used. The predict function returns probabilities for all nucleotide positions on the transcript and is stored as a numpy vector format (`.npy`). When high scoring sites are present, a `.csv` file containing the relevant positions and additional information is generated. 
 
 Six models were trained using different sets of chromosomes. When applying the model on transcript isoforms derived from the human chromosome, it is necessary to select the right model based on chromosome the transcript isoform is located on.
 
@@ -65,12 +65,11 @@ Six models were trained using different sets of chromosomes. When applying the m
 
 This step ensures the model used is not one trained on related data. For other types of transcript sequences, any model is valid.
 
-
 Example usage:
 
 ```bash
 transcript_transformer predict AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACGGT RNA models/proteome/TIS_transformer_L_1.ckpt
-transcript_transformer predict data/example_data.fa fa models/proteome/TIS_transformer_L_1.ckpt
+transcript_transformer predict data/example_data.fa fa models/proteome/TIS_transformer_L_2.ckpt
 ```
 
 Function arguments:
@@ -85,8 +84,9 @@ positional arguments:
 
 options:
   -h, --help            show this help message and exit
-  --output_type         file type of output predictions (default: npy)
+  --prob_th				minimum prediction threshold at which site is deemed worthy of attention (default: 0.01)
   --save_path           save file path (default: results)
+  --output_type         file type of output predictions (default: npy)
 ```
 
 ## 🖊️ Citation <a name="citation"></a>
