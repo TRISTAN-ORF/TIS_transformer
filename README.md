@@ -37,8 +37,64 @@ Alternatively, all results can be acquired under `/outputs/`
 
 ## 📖 User guide <a name="userguide"></a>
 
-To apply the methodology for custom data or perform predictions, see the [transcript transformer](https://github.com/jdcla/transcript_transformer) package.
+For more advanced options regarding the tool, see the [transcript transformer](https://github.com/jdcla/transcript_transformer) package.
 
+### Installation 
+
+`pytorch` needs to be separately [installed by the user](https://pytorch.org/get-started/locally/). 
+
+Next, the package can be installed running 
+```bash
+pip install transcript-transformer
+```
+
+### Predict
+
+A single RNA sequence as input or a path to a `.fa` file can be used. The predict function returns probabilities for all nucleotide positions on the transcript and is stored as a numpy vector format (`.npy`).
+
+Six models were trained using different sets of chromosomes. When applying the model on transcript isoforms derived from the human chromosome, it is necessary to select the right model based on chromosome the transcript isoform is located on.
+
+| Model                                    | Chromosomes   |
+|------------------------------------------|---------------|
+| models/proteome/TIS_transformer_L_1.ckpt | 1, 7, 13, 19  |
+| models/proteome/TIS_transformer_L_2.ckpt | 2, 8, 14, 20  |
+| models/proteome/TIS_transformer_L_3.ckpt | 3, 9, 15, 21  |
+| models/proteome/TIS_transformer_L_4.ckpt | 4, 10, 16, 22 |
+| models/proteome/TIS_transformer_L_5.ckpt | 5, 11, 17, X  |
+| models/proteome/TIS_transformer_L_6.ckpt | 6, 12, 18, Y  |
+
+This step ensures the model used is not one trained on related data. For other types of transcript sequences, any model is valid.
+
+
+Example usage
+
+```bash
+transcript_transformer predict AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACGGT RNA models/proteome/TIS_transformer_L_1.ckpt
+transcript_transformer predict data/example_data.fa fa models/proteome/TIS_transformer_L_1.ckpt
+```
+
+
+
+```
+transcript_transformer predict -h
+
+positional arguments:
+  input_data            path to JSON dict (h5) or fasta file, or RNA sequence
+  input_type            type of input
+  checkpoint            path to checkpoint of trained model
+
+options:
+  -h, --help            show this help message and exit
+  --output_type         file type of output predictions (default: npy)
+  --save_path           save file path (default: results)
+```
+
+Example
+
+```
+transcript_transformer predict AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACGGT RNA models/proteome/TIS_transformer_L_1.ckpt
+transcript_transformer predict data/example_data.fa fa models/proteome/TIS_transformer_L_1.ckpt
+```
 
 ## 🖊️ Citation <a name="citation"></a>
        
