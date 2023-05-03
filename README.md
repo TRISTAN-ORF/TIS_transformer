@@ -41,7 +41,7 @@ For more advanced options regarding the tool, see the [transcript transformer](h
 
 ### Installation 
 
-`pytorch` needs to be separately [installed by the user](https://pytorch.org/get-started/locally/). 
+`pytorch` needs to be separately [installed by the user](https://pytorch.org/get-started/locally/). GPU/CUDA support is not required.
 
 Next, the package can be installed running 
 ```bash
@@ -66,14 +66,14 @@ Six models were trained using different sets of chromosomes. When applying the m
 This step ensures the model used is not one trained on related data. For other types of transcript sequences, any model is valid.
 
 
-Example usage
+Example usage:
 
 ```bash
 transcript_transformer predict AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACGGT RNA models/proteome/TIS_transformer_L_1.ckpt
 transcript_transformer predict data/example_data.fa fa models/proteome/TIS_transformer_L_1.ckpt
 ```
 
-
+Function arguments:
 
 ```
 transcript_transformer predict -h
@@ -87,13 +87,6 @@ options:
   -h, --help            show this help message and exit
   --output_type         file type of output predictions (default: npy)
   --save_path           save file path (default: results)
-```
-
-Example
-
-```
-transcript_transformer predict AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACGGT RNA models/proteome/TIS_transformer_L_1.ckpt
-transcript_transformer predict data/example_data.fa fa models/proteome/TIS_transformer_L_1.ckpt
 ```
 
 ## 🖊️ Citation <a name="citation"></a>
