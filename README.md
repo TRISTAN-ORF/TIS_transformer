@@ -82,9 +82,9 @@ positional arguments:
 
 options:
   -h, --help            show this help message and exit
-  --prob_th				minimum prediction threshold at which site is deemed worthy of attention (default: 0.01)
+  --prob_th             minimum prediction threshold at which site is deemed worthy of attention (default: 0.01)
   --save_path           save file path (default: results)
-  --output_type         file type of output predictions (default: npy)
+  --output_type         file type of raw model outputs (default: npy)
 ```
 
 ## 🖊️ Citation <a name="citation"></a>
