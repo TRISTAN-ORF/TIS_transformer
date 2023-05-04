@@ -72,11 +72,9 @@ transcript_transformer predict AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACGGT RNA models/p
 transcript_transformer predict data/example_data.fa fa models/proteome/TIS_transformer_L_2.ckpt
 ```
 
-Function arguments:
+Main function arguments, run `transcript_transformer predict -h` for a complete list:
 
 ```
-transcript_transformer predict -h
-
 positional arguments:
   input_data            path to JSON dict (h5) or fasta file, or RNA sequence
   input_type            type of input
@@ -91,15 +89,19 @@ options:
 
 ## 🖊️ Citation <a name="citation"></a>
        
-```
-@article {Clauwaert2021.11.18.468957,
-	author = {Clauwaert, Jim and McVey, Zahra and Gupta, Ramneek and Menschaert, Gerben},
-	title = {TIS Transformer: Re-annotation of the human proteome using deep learning},
-	elocation-id = {2021.11.18.468957},
-	year = {2021},
-	doi = {10.1101/2021.11.18.468957},
-	URL = {https://www.biorxiv.org/content/early/2021/11/19/2021.11.18.468957},
-	eprint = {https://www.biorxiv.org/content/early/2021/11/19/2021.11.18.468957.full.pdf},
-	journal = {bioRxiv}
+```bibtex
+@article {10.1093/nargab/lqad021,
+    author = {Clauwaert, Jim and McVey, Zahra and Gupta, Ramneek and Menschaert, Gerben},
+    title = "{TIS Transformer: remapping the human proteome using deep learning}",
+    journal = {NAR Genomics and Bioinformatics},
+    volume = {5},
+    number = {1},
+    year = {2023},
+    month = {03},
+    issn = {2631-9268},
+    doi = {10.1093/nargab/lqad021},
+    url = {https://doi.org/10.1093/nargab/lqad021},
+    note = {lqad021},
+    eprint = {https://academic.oup.com/nargab/article-pdf/5/1/lqad021/49418780/lqad021\_supplemental\_file.pdf},
 }
 ```
