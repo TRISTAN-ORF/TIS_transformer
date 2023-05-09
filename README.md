@@ -37,6 +37,8 @@ Alternatively, all results can be acquired under `/outputs/`
 
 ## 📖 User guide <a name="userguide"></a>
 
+For smaller data sets, check out [![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](http://localhost:8550/TIS_Transformer_Tool) to apply TIS Transformer without installation.
+
 For more advanced options regarding the tool, see the [transcript transformer](https://github.com/jdcla/transcript_transformer) package.
 
 ### Installation 
