@@ -1,6 +1,6 @@
 # Model predictions
 
-## `GRCh38v107_outputs.npy`
+## `GRCh38v107_outputs.h5`
  
 ```
 GRCh38v107_outputs.h5                       (h5py.file)
