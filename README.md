@@ -1,7 +1,9 @@
 <div align="center">
 <h1>🧬 TIS transformer</h1>
 
-Supporting repository named after the equally named study
+Driving coding sequence discovery since 2023
+
+[![DOI:10.1007/978-3-319-76207-4_15](https://zenodo.org/badge/DOI/10.1007/978-3-319-76207-4_15.svg)](https://doi.org/10.1093/nargab/lqad021)
 
 [![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](http://jdcla.ugent.be)
 </div>
