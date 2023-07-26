@@ -55,7 +55,7 @@ pip install transcript-transformer
 
 A single RNA sequence as input or a path to a `.fa` file can be used. The predict function returns probabilities for all nucleotide positions on the transcript and is stored as a numpy vector format (`.npy`). When high scoring sites are present, a `.csv` file containing the relevant positions and additional information is generated. 
 
-Six models were trained using different sets of chromosomes. When applying the model on transcript isoforms derived from the human chromosome, it is necessary to select the right model based on chromosome the transcript isoform is located on.
+Six models were trained using different sets of chromosomes. When applying transcript sequences derived from existing genes, ensure the use of the correct model. The model to be used is determined by the chromosome the gene/transcript is located on:
 
 | Model                                    | Chromosomes   |
 |------------------------------------------|---------------|
