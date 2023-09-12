@@ -4,6 +4,7 @@
 Driving coding sequence discovery since 2023
 
 [![DOI:10.1007/978-3-319-76207-4_15](https://zenodo.org/badge/DOI/10.1007/978-3-319-76207-4_15.svg)](https://doi.org/10.1093/nargab/lqad021)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.8338189.svg)](https://doi.org/10.5281/zenodo.8338189)
 
 [![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](http://jdcla.ugent.be)
 </div>
@@ -13,14 +14,14 @@ TIS transformer is created to annotate translation initiation sites (TISs) on tr
 
 To apply the TIS Transformer for new transcript sequences of the human transcriptome, check out [![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](http://localhost:8550/TIS_Transformer_Tool) to skip local installation. For training models on new organisms or applying larger data, check out the installation guide.
 
-Data files too large to host on GitHub that were created as part of the study, specifically those in the `data/`, `models/`, and `outputs/` folders, can be downloaded from [the BioBix servers](http://biobix.be/tis_transformer).
+Data files too large to host on GitHub that were created as part of the study, specifically those in the `data/`, `models/`, and `outputs/` folders, can be downloaded from [Zenodo](https://doi.org/10.5281/zenodo.8338189).
 
 ## 🔗 Methodology <a name="methodology"></a>
 Annotations are performed by a machine learning model following a methodology similar to those defined for natural language modelling tasks. Ensemble annotations have been used to obtain transcripts and TIS annotations. The model processes the full transcript sequence to predict the presence of TISs at each position on the transcript. The model architecture is based on that of the [Performer](https://arxiv.org/abs/2009.14794), which allows the use of longer input sequences due to the memory efficiency of the attention-based calculations.
 
 ## 📏 Benchmark <a name="benchmark"></a>
 
-The tool has been compared to similar approaches applying TIS prediction based on the transcript nucleotide sequence. More details about the benchmarking approach are listed in the [article](https://www.biorxiv.org/content/10.1101/2021.11.18.468957v1). The scripts to obtain the scores for TISRover, TITER, and DeepGSR are deposited in `scripts/benchmarks`. The models are found under `models/benchmarks`
+The tool has been compared to similar approaches applying TIS prediction based on the transcript nucleotide sequence. More details about the benchmarking approach are listed in the [article](https://doi.org/10.1093/nargab/lqad021). The scripts to obtain the scores for TISRover, TITER, and DeepGSR are deposited in `scripts/benchmarks`. The models are found under `models/benchmarks`
 
 ## 📊 Remapping of the human proteome <a name="human"></a>
 
