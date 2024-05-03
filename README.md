@@ -10,7 +10,7 @@ Driving coding sequence discovery since 2023
 </div>
 
 ## 📋 About <a name="about"></a>
-TIS transformer is created to annotate translation initiation sites (TISs) on transcripts using nucleotide sequence information. The repository holds the scripts, data, models and model outputs used to perform the benchmarks and remap the human proteome as discussed in [this paper](https://www.biorxiv.org/content/10.1101/2021.11.18.468957v1).
+TIS transformer is created to annotate translation initiation sites (TISs) on transcripts using nucleotide sequence information. The repository holds the scripts, data, models and model outputs used to perform the benchmarks and remap the human proteome as discussed in [NAR Genomics & Bioinformatics](https://academic.oup.com/nargab/article/5/1/lqad021/7069281).
 
 To apply the TIS Transformer for new transcript sequences of the human transcriptome, check out [![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](http://localhost:8550/TIS_Transformer_Tool) to skip local installation. For training models on new organisms or applying larger data, check out the installation guide.
 
