@@ -41,7 +41,7 @@ Alternatively, the model outputs for each position on the transcriptome can be a
 
 For smaller data sets, check out [![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](http://localhost:8550/TIS_Transformer_Tool) to apply TIS Transformer without installation.
 
-For more advanced options regarding the tool, such as the ability to train models on new species, see the [transcript transformer](https://github.com/jdcla/transcript_transformer) package.
+For more advanced options regarding the tool, such as the ability to train models on new species, see the [transcript transformer](https://github.com/TRISTAN-ORF/transcript_transformer) package.
 
 ### Installation 
 
