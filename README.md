@@ -86,9 +86,9 @@ tis_transformer config.yaml --prob_cutoff 0.01 --results
 
 See also [https://github.com/TRISTAN-ORF/RiboTIE](https://github.com/TRISTAN-ORF/RiboTIE).
 
-### Predict
+### Predict single sequences on the published model
 
-A single RNA sequence as input or a path to a `.fa` file can be used. The predict function returns probabilities for all nucleotide positions on the transcript and is stored as a numpy vector format (`.npy`). When high scoring sites are present, a `.csv` file containing the relevant positions and additional information is generated. 
+In addition to predicting the full transcriptome as featured in the previous step, it is also possible to use single RNA sequences as input or a path to a `.fa` file on a trained model. The predict function returns probabilities for all nucleotide positions on the transcript and is stored as a numpy vector format (`.npy`). When high scoring sites are present, a `.csv` file containing the relevant positions and additional information is generated. 
 
 Six models were trained using different sets of chromosomes. When applying transcript sequences derived from existing genes, ensure the use of the correct model. The model to be used is determined by the chromosome the gene/transcript is located on:
 
