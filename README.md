@@ -51,6 +51,40 @@ Next, the package can be installed running
 ```bash
 pip install transcript-transformer
 ```
+### Training a model from scratch
+
+Dictionary files (YAML/JSON) are the recommended approach to pass arguments to the tool. A genome-level reference and assembly file (`*.gtf`, `*.fa`) and output path for the created database file (`*.h5`) are three required arguments. 
+
+For example, using `config.yaml`:
+
+```yaml
+gtf_path : Homo_sapiens.GRCh38.110.gtf
+fa_path : Homo_sapiens.GRCh38.dna.primary_assembly.fa
+h5_path : Homo_sapiens.GRCh38.110.h5
+```
+we can run TIS Transformer:
+
+```bash
+tis_transformer config.yaml
+```
+The tool offers various options to alter the configuration of the model, training parameters and output files. Evaluate these by running `tis_transformer --help`.
+
+In essence, running `tis_transformer` will go through the following steps:
+
+1. Parse all data to a HDF5 database (h5_path)
+2. Fine-tune 5 models on non-overlapping folds of the data.
+3. Get model predictions for all positions of the transcriptome
+4. Generate table with metadata for the top ranking predictions (determined by a set cut-off)
+
+Various options are available, such as increasing the set of positive predictions provided by TIS Transformer. This can be done by lowering the cut-off with which the positive set is derived:
+
+```bash
+tis_transformer config.yaml --prob_cutoff 0.01 --results
+```
+
+**Note that `--results` will prevent the the tool from retraining new models from scratch by skipping steps 1--3 by using the already existing set of predictions of the transcriptome to recreate the final table!**
+
+See also [https://github.com/TRISTAN-ORF/RiboTIE](https://github.com/TRISTAN-ORF/RiboTIE).
 
 ### Predict
 
